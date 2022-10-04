@@ -1,0 +1,60 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "prettier"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "no-console": "warn",
+    "camelcase": "error",
+    "spaced-comment": "error",
+    "no-duplicate-imports": "error",
+    "max-len": [
+      2,
+      {
+        "code": 120, // Code width is already enforced by Prettier
+        "tabWidth": 2,
+        "comments": 100,
+        "ignoreUrls": true,
+        "ignorePattern": "(eslint-disable|@)"
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": ["warn"],
+    "@typescript-eslint/ban-ts-comment": ["warn"],
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "kebabCase": false,
+          "camelCase": true,
+          "pascalCase": true
+        },
+        "ignore": ["react-app-env.d.ts"]
+      }
+    ]
+  }
+}
