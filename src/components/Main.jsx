@@ -1,12 +1,22 @@
 import React from 'react'
-import Constants from 'expo-constants'
 import { Text, View } from 'react-native'
-import RepoList from './RepositoryList'
+import RepoList from './RepositoryList.jsx'
+import AppBar from './AppBar'
+import { Redirect, Route, Switch } from 'react-router-native'
 
 const Main = () => {
   return (
-    <View style={{ marginTop: Constants.statusBarHeight, flexGrow: 1 }}>
-      <RepoList />
+    <View style={{ flex: 1 }}>
+      <AppBar />
+      <Switch>
+        <Route path="/" exact>
+          <RepoList />
+        </Route>
+        <Route path="/signin" exact>
+          <Text>Working on it</Text>
+        </Route>
+        <Redirect to="/" />
+      </Switch>
     </View>
   )
 }
