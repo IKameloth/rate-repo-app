@@ -1,8 +1,9 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import RepoList from './RepositoryList.jsx'
 import AppBar from './AppBar'
 import { Redirect, Route, Switch } from 'react-router-native'
+import Login from '../pages/Login.jsx'
 
 const Main = () => {
   return (
@@ -13,7 +14,7 @@ const Main = () => {
           <RepoList />
         </Route>
         <Route path="/signin" exact>
-          <Text>Working on it</Text>
+          <Login />
         </Route>
         <Redirect to="/" />
       </Switch>
